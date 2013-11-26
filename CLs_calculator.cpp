@@ -14,8 +14,8 @@
 
 int main(void) {
 
-  int nbins=3;
-  //int nbins=1;
+  //int nbins=3;
+  int nbins=1;
 
   std::vector<double> bg_orig(nbins, 0.0);
   std::vector<double> bguncert_orig(nbins, 0.0);
@@ -24,16 +24,16 @@ int main(void) {
   std::vector<double> data(nbins, 0.0);
 
   //THINGS TO CHANGE START
-  bg_orig[0] = 1.1; bg_orig[1] = 1.2; bg_orig[2] = 2.6;
-  bguncert_orig[0] = 1.0; bguncert_orig[1] = 1.0; bguncert_orig[2] = 0.54;
-  sig_orig[0] = 2.44; sig_orig[1] = 2.96; sig_orig[2] = 4.81;
-  siguncert_orig[0] = 0.2; siguncert_orig[1] = 0.2; siguncert_orig[2] = 0.20;
-  data[0] = 1; data[1] = 0; data[2] = 3;
-  //bg_orig[0]=2.2;
-  //bguncert_orig[0]=0.45;
-  //sig_orig[0]=0.0;
-  //siguncert_orig[0]=0.2;
-  //data[0]=1;
+  //bg_orig[0] = 1.1; bg_orig[1] = 1.2; bg_orig[2] = 2.6;
+  //bguncert_orig[0] = 1.0; bguncert_orig[1] = 1.0; bguncert_orig[2] = 0.54;
+  //sig_orig[0] = 2.44; sig_orig[1] = 2.96; sig_orig[2] = 4.81;
+  //siguncert_orig[0] = 0.2; siguncert_orig[1] = 0.2; siguncert_orig[2] = 0.20;
+  //data[0] = 1; data[1] = 0; data[2] = 3;
+  bg_orig[0]=50.0;
+  bguncert_orig[0]=0.10;
+  sig_orig[0]=10.0;
+  siguncert_orig[0]=0.2;
+  data[0]=60;
   //THINGS TO CHANGE END
 
 
