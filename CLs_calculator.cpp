@@ -10,7 +10,7 @@
 
 //Jad Marrouche, November 2013
 //to compile, do:
-//g++ CLs_calculator.cpp -I`root-config --incdir` `root-config --libs` -o CLs_calculator.exe
+//g++ CLs_calculator.cpp `root-config --cflags --libs` -o CLs_calculator.exe
 
 int main(void) {
 
