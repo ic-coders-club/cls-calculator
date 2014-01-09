@@ -52,6 +52,10 @@ int main(void) {
   std::vector<double> siglambda(nbins, 0.0);
   std::vector<int> bg(nbins, 0);
   std::vector<int> sigbg(nbins, 0);
+
+  //an alternative way to calculate the CLs
+  std::vector<double> t_bg_toys;
+  std::vector<double> t_sigbg_toys;
   
   for(int i=0; i<num_iterations; i++) {
   
@@ -68,6 +72,8 @@ int main(void) {
     
     histbg->Fill(-2.0 * log(qbg));
     histsigbg->Fill(-2.0 * log(qsigbg));
+    t_bg_toys.push_back(-2.0 * log(qbg));
+    t_sigbg_toys.push_back(-2.0 * log(qsigbg));
 		 
   }
 
@@ -80,7 +86,12 @@ int main(void) {
   qbgd = -2.0 * log(qbgd);
 
   std::cout << "-2*ln(Q) = " << qbgd << std::endl;
-
+  double nbg=0,nsigbg=0;
+  for(int i=0; i<num_iterations; i++) {
+     if (qbgd<t_bg_toys[i]) nbg+=1;
+     if (qbgd<t_sigbg_toys[i]) nsigbg+=1;
+  }
+  std::cout << "nsigbg/nbg (alternative CLs calculation): " << nsigbg/nbg << std::endl;
 
   double runningsumbg=histbg->Integral();
   double runningsumsigbg=histsigbg->Integral();
