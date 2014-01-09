@@ -1,0 +1,2 @@
+# bg, Dbg, sig, Dsig, data
+  50  0.10  10  0.2  60        
